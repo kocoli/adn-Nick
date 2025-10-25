@@ -1,0 +1,34 @@
+{
+  "name": "kocoli/adn-nick",
+  "version": "1.0.0",
+  "description": "Estrutura básica de uma aplicação MVC",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Nicóli Pereira Elesbão",
+      "email": "nicolielesbao.ch036@academico.ifsul.edu.br",
+      "homepage": "https://github.com/kocoli",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Core/Helpers.php",
+      "source/Core/Config.php"
+    ]
+  },
+  "require": {
+    "php": ">=8.1",
+    "ext-pdo": ">=7.4",
+    "coffeecode/router" : "2.0.2",
+    "firebase/php-jwt": "v6.11.1",
+    "league/plates": "v3.6.0",
+    "sorfabiosantos/uploader": "^1.0"
+  }
+}
