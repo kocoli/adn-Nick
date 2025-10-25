@@ -121,15 +121,16 @@ class User extends Model
     }
 
     // LOGIN E LOGOUT
-    public function login(): bool
+    public function login(string $password): bool
     {
-        if (!password_verify($this->password, $this->password)) {
+        if (!password_verify($password, $this->password)) {
             $this->errorMessage = "Senha incorreta";
             return false;
         }
-        // Aqui você pode gerar o JWT ou criar a sessão
+        // Criar sessão ou gerar JWT
         return true;
     }
+
 
     public function logout(): void
     {

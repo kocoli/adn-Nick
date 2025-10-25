@@ -11,7 +11,7 @@ const CONF_URL_BASE = "http://localhost/adn-nick/";
  */
 
 const CONF_DB_HOST = "localhost"; 
-const CONF_DB_NAME = "bd-adn"; 
+const CONF_DB_NAME = "db_nick"; 
 const CONF_DB_USER = "root";
 const CONF_DB_PASS = ""; 
 const CONF_DB_PORT = "3306";
