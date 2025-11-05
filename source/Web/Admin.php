@@ -12,12 +12,11 @@ class Admin extends Controller
     public function home (array $data): void
     {
         echo $this->view->render("home", []);
-        //echo "Olá, Admin!";
     }
 
-    public function clients (): void
+    public function products (): void
     {
-        echo $this->view->render("clients", []);
+        echo $this->view->render("products", []);
     }
 
 }

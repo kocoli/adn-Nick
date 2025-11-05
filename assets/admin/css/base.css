@@ -1,24 +1,11 @@
 /* ===== VARIÁVEIS GLOBAIS ===== */
 :root {
-  --bege-claro: #EEE9E3;
-  --bege-neutro: #E4DED6;
-  --bege-frio: #DAD4CC;
-  --branco-quente: #F9F9F8;
-  --branco-puro: #FFFFFF;
-
-  --cinza-prata: #C7C7C7;
-  --cinza-escuro: #3e3e3e;
-  --dourado-suave: #BFA76F;
-
-  --cor-principal: var(--bege-claro);
-  --cor-secundaria: var(--bege-frio);
-  --cor-destaque: var(--dourado-suave);
-  --cor-fundo: var(--branco-quente);
-  --cor-escura: var(--cinza-escuro);
-  --cor-clara: var(--branco-puro);
-  --cor-hover: rgba(0, 0, 0, 0.05);
-
-  --sombra: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --cor-principal: #F7E3D3; /* Rosa vintage */
+  --cor-secundaria: #D68B8B; /* Champagne claro */
+  --cor-escura: #7A5550; /* Marrom rosado */
+  --cor-clara: #FFF9F5; /* Fundo */
+  --cor-hover: #E4A6A6; /* Rosa antigo */
+  --sombra: 0 2px 10px rgba(122,85,80,0.15);
   --transicao: 0.3s ease;
 }
 

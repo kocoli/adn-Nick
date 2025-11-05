@@ -16,11 +16,11 @@
 </head>
 <body>
     <!-- Sidebar -->
-<aside id="sidebar" class="sidebar">
+<aside id="sidebar" class="sidebar fechar">
   <nav>
     <ul>
-      <li class="ativo"><a href="<?= url("admin") ?>"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-      <li><a href="#"><i class="fa-solid fa-box"></i><span>Produtos</span></a></li>
+      <li><a href="<?= url("admin") ?>"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="<?= url("admin/products") ?>"><i class="fa-solid fa-box"></i><span>Produtos</span></a></li>
       <li><a href="#"><i class="fa-solid fa-newspaper"></i><span>Artigos</span></a></li>
       <li><a href="#"><i class="fa-solid fa-bag-shopping"></i><span>Pedidos</span></a></li>
       <li><a href="#"><i class="fa-solid fa-ticket"></i><span>Cupons</span></a></li>
@@ -35,16 +35,16 @@
 
     <header class="header">
       <!-- Menu Hamburguer -->
-      <div class="group">
+      <div class="titleHeader">
           <button id="hamburguer" class="btn-icone">
             <i class="fa-solid fa-bars"></i>
           </button>
           <!-- Logo -->
-          <h1 class="logo">ATÊLIE DA NICK</h1>
+          <h1 class="logo">ATELIÊ DA NICK</h1>
       </div>
 
       <!-- Título da Página -->
-      <h2 class="titulo-pagina">Painel de Vendas</h2>
+      <h2 class="titulo-pagina"><?= $title ?? "Painel de Controle"; ?></h2>
 
       <!-- Navegação do Usuário -->
       <nav class="user-nav">
@@ -59,10 +59,10 @@
       </nav>
     </header>
 
-  <main class="conteudo"><?= $this->section("content") ?></main>
+  <main class="conteudo"><?= $this->section("main") ?></main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="<?= url("assets/admin/js/grafico.js") ?>"></script>
-<script src="<?= url("assets/admin/js/script.js") ?>"></script>
+<script type="module" src="<?= url("assets/admin/js/script.js") ?>"></script>
 </body>
 </html>

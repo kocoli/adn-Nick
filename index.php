@@ -13,7 +13,7 @@ $route->namespace("Source\Web");
 // Rotas amigáveis da área Administrativa
 $route->group("/admin");
 $route->get("/", "Admin:home");
-$route->get("/clientes", "Admin:clients");
+$route->get("/products", "Admin:products");
 $route->group(null);
 
 $route->get("/ops/{errcode}", "Site:error");
