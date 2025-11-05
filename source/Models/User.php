@@ -1,60 +1,87 @@
 <?php
 
-namespace Source\Models;
+namespace Source\Models\User;
 
-use Source\Core\Connect;
 use Source\Core\Model;
-use PDOException;
+use Source\Core\Connect;
+use \PDOException;
 
 class User extends Model
 {
-    protected $id;
-    protected $idType;
-    protected $name;
-    protected $email;
-    protected $password;
-    protected $photo;
-    protected $link;
+    protected $table = "users";
+
+    private ?int $id;
+    private ?int $idType;
+    private ?string $name;
+    private ?string $email;
+    private ?string $password;
+    private ?string $photo;
 
     public function __construct(
-        int $id = null,
-        int $idType = null,
-        string $name = null,
-        string $email = null,
-        string $password = null,
-        string $photo = null,
-        string $link = null
+        ?int $id = null, 
+        ?int $idType = null, 
+        ?string $name = null, 
+        ?string $email = null, 
+        ?string $password = null,
+        ?string $photo = null
     )
     {
-        $this->table = "users";
         $this->id = $id;
         $this->idType = $idType;
         $this->name = $name;
         $this->email = $email;
         $this->password = $password;
         $this->photo = $photo;
-        $this->link = $link;
     }
 
-    // GETTERS E SETTERS
-    public function getId(): ?int { return $this->id; }
-    public function setId(?int $id): void { $this->id = $id; }
-    public function getIdType(): ?int { return $this->idType; }
-    public function setIdType(?int $idType): void { $this->idType = $idType; }
-    public function getName(): ?string { return $this->name; }
-    public function setName(?string $name): void { $this->name = $name; }
-    public function getEmail(): ?string { return $this->email; }
-    public function setEmail(?string $email): void { $this->email = $email; }
-    public function getPassword(): ?string { return $this->password; }
-    public function setPassword(?string $password): void { $this->password = $password; }
-    public function getPhoto(): ?string { return $this->photo; }
-    public function setPhoto(?string $photo): void { $this->photo = $photo; }
-    public function getLink(): ?string { return $this->link; }
-    public function setLink(?string $link): void { $this->link = $link; }
 
-    // CRUD PERSONALIZADO
-    public function insert(): bool
+    public function getId(): ?int 
+    { 
+        return $this->id;
+    }
+    public function getIdType(): ?int 
+    { 
+        return $this->idType; 
+    }
+    public function getName(): ?string
+    { 
+        return $this->name;
+    }
+    public function getEmail(): ?string 
+    { 
+        return $this->email; 
+    }
+    public function getPassword(): ?string
+    { 
+        return $this->password;
+    }
+    public function getPhoto(): ?string
+    { 
+        return $this->photo;
+    }
+
+    public function setName(string $name): void 
+    { 
+        $this->name = $name; 
+    }
+    public function setEmail(string $email): void 
+    { 
+        $this->email = $email; 
+    }
+    public function setPassword(string $password): void 
+    { 
+        $this->password = $password; 
+    }
+    public function setPhoto(string $photo): void 
+    { 
+        $this->photo = $photo; 
+    }
+
+
+    //INSERT
+    public function insert (): bool
     {
+
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->errorMessage = "E-mail inválido";
             return false;
@@ -80,7 +107,8 @@ class User extends Model
         return true;
     }
 
-    public function findByEmail(string $email): bool
+    //PESQUISAR POR EMAIL
+    public function findByEmail (string $email): bool
     {
         $sql = "SELECT * FROM users WHERE email = :email";
         $stmt = Connect::getInstance()->prepare($sql);
@@ -89,81 +117,79 @@ class User extends Model
         try {
             $stmt->execute();
             $result = $stmt->fetch();
-            if (!$result) return false;
-
+            if (!$result) {
+                return false;
+            }
             $this->id = $result->id;
             $this->idType = $result->idType;
             $this->name = $result->name;
             $this->email = $result->email;
             $this->password = $result->password;
             $this->photo = $result->photo;
-            $this->link = $result->link ?? null;
 
             return true;
         } catch (PDOException $e) {
             $this->errorMessage = "Erro ao buscar o registro: {$e->getMessage()}";
             return false;
         }
+
     }
 
-    public function findLink(string $link): bool
+    //DELETAR POR ID
+    public function deleteById(int $id): bool
     {
-        $sql = "SELECT * FROM users WHERE link = :link";
-        $stmt = Connect::getInstance()->prepare($sql);
-        $stmt->bindValue(":link", $link);
+        try {
+        $stmt = Connect::getInstance()->prepare("DELETE FROM {$this->table} WHERE id = :id");
+        $stmt->bindValue(":id", $id); 
         $stmt->execute();
-        $result = $stmt->fetch();
-        if (!$result) return false;
 
-        $this->id = $result->id;
-        $this->link = $result->link;
+        if ($stmt->rowCount() === 0) {
+            return false; // Nenhuma linha foi afetada (ID não encontrado)
+        }
+
         return true;
+        } catch (PDOException $e) {
+        $this->errorMessage = "Erro ao excluir o registro: {$e->getMessage()}";
+        return false;
+        }
     }
 
-    // LOGIN E LOGOUT
-    public function login(string $password): bool
+    //UPDATEs
+    public function updateById(): bool
     {
-        if (!password_verify($password, $this->password)) {
-            $this->errorMessage = "Senha incorreta";
+        try {
+            $sql = "UPDATE users SET name = :name, email = :email WHERE id = :id";
+            $stmt = Connect::getInstance()->prepare($sql);
+            $stmt->bindValue(":name", $this->name);
+            $stmt->bindValue(":email", $this->email);
+            $stmt->bindValue(":id", $this->id);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                $this->errorMessage = "Erro ao executar update";
+                return false;
+            }
+        } catch (\PDOException $e) {
+            $this->errorMessage = "Erro ao atualizar: " . $e->getMessage();
             return false;
         }
-        // Criar sessão ou gerar JWT
-        return true;
     }
 
 
-    public function logout(): void
+    public function updatePassword(): bool
     {
-        // Aqui você encerra a sessão ou invalida o JWT
-        session_destroy();
-    }
-
-    // UPDATES INDIVIDUAIS
-    public function updateName(string $name): bool
-    {
-        $this->name = $name;
-        return $this->updateById();
-    }
-
-    public function updateEmail(string $email): bool
-    {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $this->errorMessage = "E-mail inválido";
+        try {
+            $sql = "UPDATE users SET password = :password WHERE id = :id";
+            $stmt = Connect::getInstance()->prepare($sql);
+            $stmt->bindValue(":password", $this->password = password_hash($this->password, PASSWORD_DEFAULT));
+            $stmt->bindValue(":id", $this->id);
+        
+            return $stmt->execute();
+        } catch (\PDOException $e) {
+            $this->errorMessage = "Erro ao atualizar senha: " . $e->getMessage();
             return false;
         }
-        $this->email = $email;
-        return $this->updateById();
     }
 
-    public function updatePhoto(string $photo): bool
-    {
-        $this->photo = $photo;
-        return $this->updateById();
-    }
-
-    public function updatePassword(string $password): bool
-    {
-        $this->password = password_hash($password, PASSWORD_DEFAULT);
-        return $this->updateById();
-    }
 }

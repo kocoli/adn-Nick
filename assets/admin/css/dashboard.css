@@ -1,0 +1,4 @@
+/* ===== DASHBOARD ===== */
+.status.entregue { background: #6cbf77; }
+.status.pendente { background: #e3c565; color: #333; }
+.status.em-transito { background: #8bb7c1; }

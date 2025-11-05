@@ -137,19 +137,56 @@ class Users extends Api
             ->back($data);
     }
 
-    public function updateUser (array $data): void
+    public function updateUser(array $data): void
     {
         $this->auth();
-        var_dump($data, $this->userAuth);
-        //var_dump( $this->userAuth);
-        //var_dump($this->userAuth->name, $this->userAuth->email);
-       /* $user = new User(
-            $this->userAuth->id,
-            $data["idType"],
-            $data["name"],
-            $data["email"]
-        );
-        var_dump($user);*/
+
+        $user = new User();
+        if (!$user->findByEmail($this->userAuth->email)) {
+            $this->call(404, "not_found", "Usuário não encontrado", "error")->back();
+            return;
+        }
+
+        // Dados vindos do FormData
+        $name = $_POST["name"] ?? null;
+        $email = $_POST["email"] ?? null;
+        $photo = $_FILES["photo"] ?? null;
+
+        if ($name && $email) {
+            $user->setName($name);
+            $user->setEmail($email);
+        }
+
+        // Upload da foto
+        if ($photo && !empty($photo["name"])) {
+            $upload = new \SorFabioSantos\Uploader\Uploader();
+            $path = $upload->Image($photo);
+            if (!$path) {
+                $this->call(400, "bad_request", $upload->getMessage(), "error")->back();
+                return;
+            }
+
+            // opcional: deletar a foto antiga
+            if ($user->getPhoto() && file_exists(__DIR__ . "/../../storage/images/{$user->getPhoto  ()}")) {
+                unlink(__DIR__ . "/../../storage/images/{$user->getPhoto()}");
+            }
+
+            $user->setPhoto($path);
+        }
+
+        if (!$user->updateById()) {
+            $this->call(500, "internal_server_error", "Erro ao atualizar usuário", "error")->back   ();
+            return;
+        }
+
+        $response = [
+            "id" => $user->getId(),
+            "name" => $user->getName(),
+            "email" => $user->getEmail(),
+            "photo" => $user->getPhoto()
+        ];
+
+        $this->call(200, "success", "Usuário atualizado com sucesso", "success")->back($response);
     }
 
     public function login(): void
@@ -176,6 +213,7 @@ class Users extends Api
         // Gerar o token JWT
         $jwt = new JWTToken();
         $token = $jwt->create([
+            "id" => $user->getId(),
             "email" => $user->getEmail(),
             "name" => $user->getName(),
             "photo" => $user->getPhoto(),

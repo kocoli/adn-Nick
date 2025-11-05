@@ -1,0 +1,36 @@
+/* ===== VARIÁVEIS GLOBAIS ===== */
+:root {
+  --bege-claro: #EEE9E3;
+  --bege-neutro: #E4DED6;
+  --bege-frio: #DAD4CC;
+  --branco-quente: #F9F9F8;
+  --branco-puro: #FFFFFF;
+
+  --cinza-prata: #C7C7C7;
+  --cinza-escuro: #3e3e3e;
+  --dourado-suave: #BFA76F;
+
+  --cor-principal: var(--bege-claro);
+  --cor-secundaria: var(--bege-frio);
+  --cor-destaque: var(--dourado-suave);
+  --cor-fundo: var(--branco-quente);
+  --cor-escura: var(--cinza-escuro);
+  --cor-clara: var(--branco-puro);
+  --cor-hover: rgba(0, 0, 0, 0.05);
+
+  --sombra: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --transicao: 0.3s ease;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-escura);
+}
