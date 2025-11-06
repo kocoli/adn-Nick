@@ -1,0 +1,161 @@
+/* ===== SEÇÃO CUPONS ===== */
+.cupons-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--cor-escura);
+}
+
+/* ===== FORMULÁRIO ===== */
+.form-cupom {
+  background: var(--cor-clara);
+  padding: 2rem;
+  box-shadow: var(--sombra);
+  width: 100%;
+}
+
+.form-cupom h2 {
+  margin-bottom: 1rem;
+  color: var(--cor-escura);
+}
+
+.grupo-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.grupo-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.grupo-form input,
+.grupo-form select {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  transition: var(--transicao);
+}
+
+.grupo-form input:focus,
+.grupo-form select:focus {
+  border-color: var(--cor-secundaria);
+  outline: none;
+  box-shadow: 0 0 5px var(--cor-hover);
+}
+
+.btn-principal {
+  background: var(--cor-secundaria);
+  color: var(--cor-clara);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transicao);
+}
+
+.btn-principal:hover {
+  background: var(--cor-hover);
+}
+
+/* ===== LISTA DE CUPONS ===== */
+.lista-cupom {
+  background: var(--cor-clara);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--sombra);
+  overflow-x: auto;
+}
+
+.top-bar {
+  margin-bottom: 1rem;
+}
+
+.top-bar input[type="search"] {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: var(--transicao);
+}
+
+.top-bar input[type="search"]:focus {
+  outline: none;
+  border-color: var(--cor-secundaria);
+  box-shadow: 0 0 5px var(--cor-hover);
+}
+
+.lista-cupom table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lista-cupom th,
+.lista-cupom td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.lista-cupom th {
+  background: var(--cor-secundaria);
+  color: var(--cor-clara);
+}
+
+/* ===== LINHAS ALTERNADAS ===== */
+.lista-cupom tbody tr:nth-child(even) {
+  background: #fdf1ed;
+}
+
+.lista-cupom tbody tr:nth-child(odd) {
+  background: #fff9f5;
+}
+
+/* ===== STATUS ===== */
+.status {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.status.ativo {
+  background: #d68b8b;
+  color: var(--cor-clara);
+}
+
+.status.inativo {
+  background: #f7e3d3;
+  color: var(--cor-escura);
+}
+
+/* ===== BOTÕES DE AÇÃO ===== */
+.btn-editar,
+.btn-excluir {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.4rem;
+  transition: var(--transicao);
+}
+
+.btn-editar {
+  color: var(--cor-escura);
+}
+
+.btn-excluir {
+  color: #b33a3a;
+}
+
+.btn-editar:hover {
+  color: var(--cor-hover);
+}
+
+.btn-excluir:hover {
+  color: #ff4d4d;
+}

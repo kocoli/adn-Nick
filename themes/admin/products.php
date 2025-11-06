@@ -1,46 +1,137 @@
 <?php $this->layout("_theme", ["title" => "Cadastro de Produtos"]); ?>
 
+<?php $this->start("specific-style"); ?>
+<link rel="stylesheet" href="<?= url("assets/admin/css/products.css") ?>">
+<?php $this->end(); ?>
+
 <?php $this->start("main"); ?>
-    <form>
-        <div class="group">
-            <h2>Informações Básicas</h2>
-            <input type="text" name="name" placeholder="Nome do produto">
-            <input type="text" name="decription" placeholder="Descrição do produto">
-            <select name="category">
-                <option value="" disabled selected hidden>Selecione uma categoria...</option>
-                <option value="">Personalizados</option>
-                <option value="">Fios e Agulhas</option>
-                <option value="">Tecidos e enxovais</option>
-                <option value="">Tintas e pinceis</option>
-                <option value="">Papelaria, adesivos e Kits</option>
-            </select>
-            <!-- Ver sub-categorias depois -->
-            <input type="text" name="code">
-        </div>
-        <div class="group">
-            <h2>Informações comerciais</h2>
-            <input type="text" name="price" placeholder="preço de venda">
-            <input type="text" name="promotion" placeholder="preço Promocional">
-            <input type="text" name="gasto" placeholder="Custo do Produto">
-            <input type="text" name="quantidady" placeholder="Quantidade dísponivel">
-        </div>
-        <div class="group">
+    <section class="form-produto">
+      <form action="#" method="post" enctype="multipart/form-data">
+        <!-- INFORMAÇÕES BÁSICAS -->
+        <fieldset>
+          <legend>Informações Básicas</legend>
 
-        </div>
-        <div class="group">
+          <div class="campo">
+            <label for="nome">Nome do Produto *</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: Kit Crochê Básico" required>
+          </div>
 
-        </div>
-        <div class="group">
+          <div class="campo">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva o produto, materiais e diferenciais..."></textarea>
+          </div>
 
-        </div>
-        <div class="group">
+          <div class="grupo">
+            <div class="campo">
+              <label for="categoria">Categoria</label>
+              <select id="categoria" name="categoria">
+                <option value="">Selecione</option>
+                <option value="fios">Fios e Lãs</option>
+                <option value="ferramentas">Ferramentas</option>
+                <option value="pecas">Peças Prontas</option>
+                <option value="outros">Outros</option>
+              </select>
+            </div>
 
-        </div>
-        <div class="group">
+            <div class="campo">
+              <label for="codigo">Código / SKU</label>
+              <input type="text" id="codigo" name="codigo" placeholder="Ex: FIO-12345">
+            </div>
+          </div>
+        </fieldset>
 
-        </div>
-        <div class="group">
+        <!-- INFORMAÇÕES COMERCIAIS -->
+        <fieldset>
+          <legend>Informações Comerciais</legend>
 
+          <div class="grupo">
+            <div class="campo">
+              <label for="preco">Preço de Venda (R$)</label>
+              <input type="number" step="0.01" id="preco" name="preco" placeholder="Ex: 89.90">
+            </div>
+
+            <div class="campo">
+              <label for="promocional">Preço Promocional (R$)</label>
+              <input type="number" step="0.01" id="promocional" name="promocional" placeholder="Ex: 79.90">
+            </div>
+
+            <div class="campo">
+              <label for="frete">Preço do Frete (R$)</label>
+              <input type="number" step="0.01" id="frete" name="frete" placeholder="Ex: 79.90">
+            </div>
+
+            <div class="campo">
+              <label for="estoque">Estoque Atual</label>
+              <input type="number" id="estoque" name="estoque" placeholder="Ex: 50">
+            </div>
+          </div>
+
+          <div class="campo">
+            <label>Status</label>
+            <div class="radio-group">
+              <label><input type="radio" name="status" value="ativo" checked> Ativo</label>
+              <label><input type="radio" name="status" value="inativo"> Inativo</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- MÍDIA -->
+        <fieldset>
+          <legend>Imagens</legend>
+
+          <div class="campo">
+            <label for="imagem">Imagem Principal</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*">
+          </div>
+
+          <div class="campo">
+            <label for="galeria">Imagens Adicionais</label>
+            <input type="file" id="galeria" name="galeria[]" accept="image/*" multiple>
+          </div>
+        </fieldset>
+
+        <!-- DETALHES -->
+        <fieldset>
+          <legend>Detalhes Técnicos</legend>
+
+          <div class="grupo">
+            <div class="campo">
+              <label for="peso">Peso (g)</label>
+              <input type="number" id="peso" name="peso" placeholder="Ex: 250">
+            </div>
+
+            <div class="campo">
+              <label for="cor">Cor</label>
+              <input type="text" id="cor" name="cor" placeholder="Ex: Rosa Bebê">
+            </div>
+
+            <div class="campo">
+              <label for="material">Material</label>
+              <input type="text" id="material" name="material" placeholder="Ex: 100% Algodão">
+            </div>
+          </div>
+
+          <div class="grupo">
+            <div class="campo">
+              <label for="largura">Largura (cm)</label>
+              <input type="number" id="largura" name="largura">
+            </div>
+            <div class="campo">
+              <label for="altura">Altura (cm)</label>
+              <input type="number" id="altura" name="altura">
+            </div>
+            <div class="campo">
+              <label for="profundidade">Profundidade (cm)</label>
+              <input type="number" id="profundidade" name="profundidade">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- BOTÕES -->
+        <div class="botoes-form">
+          <button type="submit" class="btn salvar"><i class="fa-solid fa-check"></i> Salvar Produto</button>
+          <button type="reset" class="btn limpar"><i class="fa-solid fa-eraser"></i> Limpar Campos</button>
         </div>
-    </form>
+      </form>
+    </section>
 <?php $this->end(); ?>

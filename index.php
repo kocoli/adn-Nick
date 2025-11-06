@@ -14,6 +14,12 @@ $route->namespace("Source\Web");
 $route->group("/admin");
 $route->get("/", "Admin:home");
 $route->get("/products", "Admin:products");
+$route->get("/articles", "Admin:articles");
+$route->get("/orders", "Admin:orders");
+$route->get("/cupons", "Admin:cupons");
+$route->get("/customers", "Admin:customers");
+$route->get("/reports", "Admin:reports");
+$route->get("/settings", "Admin:settings");
 $route->group(null);
 
 $route->get("/ops/{errcode}", "Site:error");

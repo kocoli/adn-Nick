@@ -23,14 +23,16 @@
 /* ===== GRÁFICOS ===== */
 .graficos {
   background: var(--cor-clara);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--sombra);
+  margin-bottom: 2rem;
 }
 
-.graficos canvas {
-  width: 100% !important;
-  height: 50vh !important;
+.graficos h2 {
+  margin-bottom: 1rem;
+  color: var(--cor-escura);
+  font-size: 1.2rem;
 }
 
 /*===== TABELA ===== */

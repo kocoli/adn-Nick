@@ -21,13 +21,13 @@
     <ul>
       <li><a href="<?= url("admin") ?>"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
       <li><a href="<?= url("admin/products") ?>"><i class="fa-solid fa-box"></i><span>Produtos</span></a></li>
-      <li><a href="#"><i class="fa-solid fa-newspaper"></i><span>Artigos</span></a></li>
-      <li><a href="#"><i class="fa-solid fa-bag-shopping"></i><span>Pedidos</span></a></li>
-      <li><a href="#"><i class="fa-solid fa-ticket"></i><span>Cupons</span></a></li>
-      <li><a href="#"><i class="fa-solid fa-user-group"></i><span>Clientes</span></a></li>
-      <li><a href="#"><i class="fa-solid fa-chart-column"></i><span>Relatórios</span></a></li>
-      <li><a href="#"><i class="fa-solid fa-gear"></i><span>Configurações</span></a></li>
-      <li><a href="#"><i class="fa-solid fa-layer-group"></i><span>Capacidade</span></a></li>
+      <li><a href="<?= url("admin/articles") ?>"><i class="fa-solid fa-newspaper"></i><span>Artigos</span></a></li>
+      <li><a href="<?= url("admin/orders") ?>"><i class="fa-solid fa-bag-shopping"></i><span>Pedidos</span></a></li>
+      <li><a href="<?= url("admin/cupons") ?>"><i class="fa-solid fa-ticket"></i><span>Cupons</span></a></li>
+      <li><a href="<?= url("admin/customers") ?>"><i class="fa-solid fa-user-group"></i><span>Clientes</span></a></li>
+      <li><a href="<?= url("admin/reports") ?>"><i class="fa-solid fa-chart-column"></i><span>Relatórios</span></a></li>
+      <li><a href="<?= url("admin/settings") ?>"><i class="fa-solid fa-gear"></i><span>Configurações</span></a></li>
+      <li><a href="<?= url("admin/orders") ?>"><i class="fa-solid fa-layer-group"></i><span>Capacidade</span></a></li>
       <li class="sair"><a href="#"><i class="fa-solid fa-right-from-bracket"></i><span>Sair</span></a></li>
     </ul>
   </nav>
@@ -61,8 +61,6 @@
 
   <main class="conteudo"><?= $this->section("main") ?></main>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="<?= url("assets/admin/js/grafico.js") ?>"></script>
 <script type="module" src="<?= url("assets/admin/js/script.js") ?>"></script>
 </body>
 </html>

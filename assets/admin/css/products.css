@@ -1,0 +1,118 @@
+.form-produto {
+  background: #fffdfb;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  width: 100%;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-produto h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #6c4a4a;
+  font-weight: 600;
+}
+
+fieldset {
+  border: 1px solid #f0e2dc;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: #fffaf8;
+}
+
+legend {
+  font-weight: 600;
+  color: #d48f9a;
+  padding: 0 0.5rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  font-weight: 500;
+  color: #5a4a4a;
+  margin-bottom: 0.3rem;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e0d3cc;
+  border-radius: 0.5rem;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+  border-color: #d48f9a;
+  outline: none;
+  box-shadow: 0 0 5px rgba(212,143,154,0.4);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.grupo {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.botoes-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn.salvar {
+  background-color: #d48f9a;
+  color: #fff;
+}
+
+.btn.salvar:hover {
+  background-color: #c17884;
+}
+
+.btn.limpar {
+  background-color: #f2e2dc;
+  color: #5a4a4a;
+}
+
+.btn.limpar:hover {
+  background-color: #e5cfc5;
+}
+
+@media (max-width: 768px) {
+  .grupo {
+    flex-direction: column;
+  }
+
+  .form-produto {
+    padding: 1.5rem;
+  }
+}

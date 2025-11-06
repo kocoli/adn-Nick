@@ -1,0 +1,139 @@
+/* ===== SEÇÃO CLIENTES ===== */
+.clientes-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--cor-escura);
+}
+
+/* ===== BARRA DE PESQUISA ===== */
+.top-bar {
+  margin-bottom: 1rem;
+}
+
+.top-bar input[type="search"] {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: var(--transicao);
+}
+
+.top-bar input[type="search"]:focus {
+  outline: none;
+  border-color: var(--cor-secundaria);
+  box-shadow: 0 0 5px var(--cor-hover);
+}
+
+/* ===== LISTA DE CLIENTES ===== */
+.lista-clientes {
+  background: var(--cor-clara);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--sombra);
+  overflow-x: auto;
+}
+
+.lista-clientes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lista-clientes th,
+.lista-clientes td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.lista-clientes th {
+  background: var(--cor-secundaria);
+  color: var(--cor-clara);
+}
+
+/* ===== LINHAS ALTERNADAS ===== */
+.lista-clientes tbody tr:nth-child(even) {
+  background: #fdf1ed;
+}
+
+.lista-clientes tbody tr:nth-child(odd) {
+  background: #fff9f5;
+}
+
+/* ===== STATUS ===== */
+.status {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.status.em-dia {
+  background: #6cbf77;
+  color: var(--cor-clara);
+}
+
+.status.devedor {
+  background: #e36565;
+  color: var(--cor-clara);
+}
+
+/* ===== TIPO DE CLIENTE ===== */
+.tipo {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.tipo.regular {
+  background: #f7e3d3;
+  color: var(--cor-escura);
+}
+
+.tipo.premium {
+  background: #968bc1;
+  color: var(--cor-clara);
+}
+
+.tipo.plus {
+  background: #8bb7c1;
+  color: var(--cor-escura);
+}
+
+/* ===== BOTÕES DE AÇÃO ===== */
+.btn-editar,
+.btn-visualizar,
+.btn-excluir {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.4rem;
+  transition: var(--transicao);
+}
+
+.btn-editar {
+  color: var(--cor-escura);
+}
+
+.btn-visualizar {
+  color: #5A3E3A;
+}
+
+.btn-excluir {
+  color: #b33a3a;
+}
+
+.btn-editar:hover {
+  color: var(--cor-hover);
+}
+
+.btn-visualizar:hover {
+  color: var(--cor-secundaria);
+}
+
+.btn-excluir:hover {
+  color: #ff4d4d;
+}

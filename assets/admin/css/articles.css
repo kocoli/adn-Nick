@@ -1,0 +1,136 @@
+/* ===== SEÇÃO ARTIGOS ===== */
+.artigos-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--cor-escura);
+}
+
+/* ===== FORMULÁRIO ===== */
+.form-artigo {
+  background: var(--cor-clara);
+  padding: 2rem;
+  box-shadow: var(--sombra);
+  width: 100%;
+}
+
+.form-artigo h2 {
+  margin-bottom: 1rem;
+  color: var(--cor-escura);
+}
+
+.grupo-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.grupo-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.grupo-form input,
+.grupo-form select,
+.grupo-form textarea {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  transition: var(--transicao);
+}
+
+.grupo-form input:focus,
+.grupo-form select:focus,
+.grupo-form textarea:focus {
+  border-color: var(--cor-secundaria);
+  outline: none;
+  box-shadow: 0 0 5px var(--cor-hover);
+}
+
+.btn-principal {
+  background: var(--cor-secundaria);
+  color: var(--cor-clara);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transicao);
+}
+
+.btn-principal:hover {
+  background: var(--cor-hover);
+}
+
+/* ===== LISTA DE ARTIGOS ===== */
+.lista-artigos {
+  background: var(--cor-clara);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--sombra);
+  overflow-x: auto;
+}
+
+.lista-artigos table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.lista-artigos th,
+.lista-artigos td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Cabeçalho da tabela */
+.lista-artigos th {
+  background: var(--cor-secundaria);
+  color: var(--cor-clara);
+  font-weight: 600;
+}
+
+/* Linhas alternadas */
+.lista-artigos tbody tr:nth-child(odd) {
+  background: var(--cor-fundo); /* tom mais claro */
+}
+
+.lista-artigos tbody tr:nth-child(even) {
+  background: var(--cor-card); /* tom levemente rosado */
+}
+
+/* Efeito hover nas linhas */
+.lista-artigos tbody tr:hover {
+  background: var(--cor-principal);
+  color: var(--cor-secundaria);
+  transition: var(--transicao);
+}
+
+/* Botões de ação */
+.btn-editar,
+.btn-excluir {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transicao);
+}
+
+.btn-editar {
+  color: var(--cor-escura);
+}
+
+.btn-excluir {
+  color: #b33a3a;
+}
+
+.btn-editar:hover {
+  color: var(--cor-hover);
+}
+
+.btn-excluir:hover {
+  color: #ff4d4d;
+}
