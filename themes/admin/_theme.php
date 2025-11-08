@@ -53,7 +53,7 @@
         <button class="btn-icone"><i class="fa-regular fa-envelope"></i></button>
 
         <div class="perfil">
-          <img src="<?= url("assets/admin/img/avatar-default.jpg") ?>" alt="Avatar do Admin">
+          <img src="<?= url("assets/_shared/img/avatar-default.jpg") ?>" alt="Avatar do Admin">
           <span class="nome-admin">Admin Nick</span>
         </div>
       </nav>

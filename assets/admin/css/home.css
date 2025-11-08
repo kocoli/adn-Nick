@@ -1,0 +1,99 @@
+/* ===== SEÇÃO HOME ADMIN ===== */
+.admin-home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--cor-escura);
+}
+
+.admin-home h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--cor-escura);
+}
+
+/* ===== CARDS DE RESUMO ===== */
+.resumo-cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card-resumo {
+  flex: 1;
+  min-width: 220px;
+  background: var(--cor-principal);
+  color: var(--cor-escura);
+  padding: 1.2rem;
+  border-radius: 1rem;
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+}
+
+.card-resumo:hover {
+  background: var(--cor-hover);
+  color: var(--cor-clara);
+}
+
+/* ===== BLOCOS ===== */
+.bloco {
+  background: var(--cor-clara);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--sombra);
+}
+
+.bloco h2 {
+  margin-bottom: 1rem;
+  color: var(--cor-escura);
+}
+
+/* ===== TABELA AGENDA ===== */
+.tabela-agenda {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-agenda th, .tabela-agenda td {
+  text-align: left;
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-agenda th {
+  background: var(--cor-secundaria);
+  color: var(--cor-clara);
+}
+
+.status {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.status.andamento { background: #f9d77a; color: #7a5500; }
+.status.agendado { background: #a8d8ff; color: #004b7a; }
+.status.concluido { background: #b6e3b6; color: #145214; }
+
+/* ===== LISTAS ===== */
+.lista-parcerias, .lista-tarefas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-parcerias li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.lista-tarefas li {
+  padding: 0.4rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.lista-tarefas input[type="checkbox"] {
+  margin-right: 0.6rem;
+}
