@@ -1,79 +1,71 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Tempo de geração: 25/10/2025 às 20:45
--- Versão do servidor: 9.1.0
--- Versão do PHP: 8.3.14
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Banco de dados: `db_nick`
---
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `users`
---
-
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `idType` int NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email_unique` (`email`),
-  UNIQUE KEY `link_unique` (`link`),
-  KEY `fk_users_users_types_idx` (`idType`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `users_types`
---
-
-DROP TABLE IF EXISTS `users_types`;
-CREATE TABLE IF NOT EXISTS `users_types` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+-- ======================================
+--  CATEGORIAS
+-- ======================================
+CREATE TABLE `categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `description` TEXT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
---
--- Despejando dados para a tabela `users_types`
---
+-- ======================================
+--  SUBCATEGORIAS
+-- ======================================
+CREATE TABLE `subcategories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `idCategory` INT NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_subcategories_categories_idx` (`idCategory`),
+  CONSTRAINT `fk_subcategories_categories` FOREIGN KEY (`idCategory`) REFERENCES `categories` (`id`)
+);
 
-INSERT INTO `users_types` (`id`, `description`) VALUES
-(1, 'Administrador'),
-(2, 'Usuário');
+-- ======================================
+--  PRODUTOS
+-- ======================================
+CREATE TABLE `products` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `idCategory` INT NOT NULL,
+  `idSubcategory` INT DEFAULT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `description` TEXT NOT NULL,
+  `sku` VARCHAR(50) NOT NULL UNIQUE,
 
---
--- Restrições para tabelas despejadas
---
+  -- Price (Value Object)
+  `price_sale` DECIMAL(10,2) NOT NULL,
+  `price_promotional` DECIMAL(10,2) DEFAULT NULL,
+  `price_freight` DECIMAL(10,2) DEFAULT NULL,
 
---
--- Restrições para tabelas `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `fk_users_users_types` FOREIGN KEY (`idType`) REFERENCES `users_types` (`id`);
-COMMIT;
+  -- Stock (Value Object)
+  `stock_quantity` INT NOT NULL DEFAULT 0,
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+  -- Admeasurement (Value Object)
+  `weight` DECIMAL(10,3) DEFAULT NULL,
+  `width` DECIMAL(10,3) DEFAULT NULL,
+  `height` DECIMAL(10,3) DEFAULT NULL,
+  `depth` DECIMAL(10,3) DEFAULT NULL,
+
+  -- Technical Details (Value Object)
+  `color` VARCHAR(100) DEFAULT NULL,
+  `material` VARCHAR(150) DEFAULT NULL,
+
+  `status` VARCHAR(20) NOT NULL DEFAULT 'active',
+
+  PRIMARY KEY (`id`),
+  KEY `fk_products_categories_idx` (`idCategory`),
+  KEY `fk_products_subcategories_idx` (`idSubcategory`),
+  CONSTRAINT `fk_products_categories` FOREIGN KEY (`idCategory`) REFERENCES `categories` (`id`),
+  CONSTRAINT `fk_products_subcategories` FOREIGN KEY (`idSubcategory`) REFERENCES `subcategories` (`id`)
+);
+
+-- ======================================
+--  IMAGENS DO PRODUTO
+-- ======================================
+CREATE TABLE `products_images` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `idProduct` INT NOT NULL,
+  `path` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_products_images_products_idx` (`idProduct`),
+  CONSTRAINT `fk_products_images_products` FOREIGN KEY (`idProduct`) REFERENCES `products` (`id`)
+);
