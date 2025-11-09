@@ -1,0 +1,163 @@
+/* Paleta suave */
+:root {
+    --rosa-claro: #fcdde2;
+    --rosa-medio: #f8bfc9;
+    --rosa-escuro: #f497b6;
+    --branco: #fff9fb;
+    --cinza: #555;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Corpo */
+body {
+    background-color: var(--branco);
+    color: var(--cinza);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to bottom, #ee95a5, #fcdde2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .container {
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--branco);
+    letter-spacing: 1px;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cinza);
+    font-weight: 500;
+    transition: color 0.3s, background 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    background-color: var(--rosa-escuro);
+    color: white;
+}
+
+/* Conteúdo principal */
+main.conteudo {
+    flex: 1;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Footer bonito e suave */
+footer {
+    background: linear-gradient(to bottom, #ee95a5, #fcdde2);
+    color: #5c4b51;
+    margin-top: 3rem;
+    border-top: 3px solid #f497b6;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* Conteúdo principal do footer */
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* Logo e slogan */
+.footer-logo h2 {
+    font-family: "Playfair Display", serif;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.footer-logo p {
+    font-size: 0.95rem;
+    color: #fffafc;
+    font-style: italic;
+}
+
+/* Ícones sociais */
+.footer-social a {
+    color: #fff;
+    margin: 0 0.5rem;
+    font-size: 1.3rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #f497b6;
+    transform: scale(1.15);
+}
+
+/* Parte inferior */
+.footer-bottom {
+    background-color: rgba(0,0,0,0.05);
+    padding: 1rem 0;
+    font-size: 0.85rem;
+    color: #444;
+    border-top: 1px solid rgba(255,255,255,0.4);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    main.conteudo {
+        padding: 1rem;
+    }
+
+    .footer-logo h2 {
+        font-size: 1.3rem;
+    }
+
+    .footer-social a {
+        font-size: 1.1rem;
+    }
+}

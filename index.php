@@ -10,6 +10,13 @@ $route = new Router(url(), ":");
 
 $route->namespace("Source\Web");
 
+$route->get("/", "Site:home");
+$route->get("/about", "Site:about");
+$route->get("/contact", "Site:contact");
+$route->get("/faqs","Site:faqs");
+$route->get("/login","Site:login");
+$route->get("/register","Site:register");
+
 //Rotas amigáveis da área App
 $route->group("/app");
 $route->get("/", "App:home");
@@ -22,6 +29,7 @@ $route->get("/avaliation", "App:avaliation");
 $route->get("/refund", "App:refund");
 $route->get("/edit", "App:edit");
 $route->get("/orders", "App:orders");
+$route->group(null);
 
 // Rotas amigáveis da área Administrativa
 $route->group("/admin");

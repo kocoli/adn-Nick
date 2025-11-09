@@ -1,0 +1,9 @@
+<?php $this->layout("_theme", ["title" => "Perguntas Frequentes"]); ?>
+
+<?php $this->start("specific-style"); ?>
+<link rel="stylesheet" href="<?= url("assets/web/css/faq.css") ?>">
+<?php $this->end(); ?>
+
+<?php $this->start("main"); ?>
+
+<?php $this->end(); ?>
