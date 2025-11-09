@@ -1,0 +1,164 @@
+/* ==============================
+   COMUNIDADE ATELIÊ
+================================= */
+#community-header {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    background: #fff0f6;
+    color: var(--cor-primaria);
+}
+
+#community-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+#community-header p {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* ===== CONTAINER ===== */
+#community-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ===== NOVO POST ===== */
+.new-post {
+    background: #fff;
+    box-shadow: var(--sombra-leve);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.new-post h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+}
+
+.new-post textarea {
+    width: 100%;
+    resize: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.new-post textarea:focus {
+    border-color: var(--cor-primaria);
+}
+
+.new-post button {
+    margin-top: 1rem;
+    background: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background 0.3s;
+}
+
+.new-post button:hover {
+    background: var(--cor-primaria-escura);
+}
+
+/* ===== FEED ===== */
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.post {
+    background: #fff;
+    box-shadow: var(--sombra-leve);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h4 {
+    color: var(--cor-primaria);
+    margin: 0;
+}
+
+.user-info small {
+    color: #888;
+}
+
+.post p {
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    color: var(--cor-primaria);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.3s;
+}
+
+.actions button:hover {
+    color: var(--cor-primaria-escura);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 700px) {
+    #community-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .new-post,
+    .post {
+        padding: 1rem;
+    }
+
+    .user-info img {
+        width: 40px;
+        height: 40px;
+    }
+}

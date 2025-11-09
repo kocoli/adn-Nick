@@ -1,0 +1,140 @@
+/* ==============================
+   HISTÓRIAS - ATELIÊ DA NICK
+================================= */
+
+#articles-header {
+    text-align: center;
+    background: #fff0f6;
+    padding: 3rem 2rem 2rem;
+    color: var(--cor-primaria);
+}
+
+#articles-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+#articles-header p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ===== LISTA DE ARTIGOS ===== */
+#articles-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.article-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra-leve);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-media);
+}
+
+.article-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.article-content h3 {
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.article-content p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.article-content a {
+    align-self: flex-start;
+    background: var(--cor-destaque);
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.article-content a:hover {
+    background: var(--cor-primaria);
+    color: #fff;
+}
+
+/* ===== SEÇÃO FINAL ===== */
+#share-story {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 3rem 2rem;
+    border-top: 1px solid #ddd;
+}
+
+#share-story h3 {
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+}
+
+#share-story p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#share-story .btn-enviar {
+    background: var(--cor-primaria);
+    color: #fff;
+    border-radius: 30px;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+#share-story .btn-enviar:hover {
+    background: var(--cor-primaria-escura);
+    transform: scale(1.05);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    #articles-header {
+        padding: 2rem 1rem;
+    }
+
+    .article-card img {
+        height: 180px;
+    }
+
+    #share-story {
+        padding: 2rem 1rem;
+    }
+}

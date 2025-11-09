@@ -1,0 +1,148 @@
+/* ==============================
+   FAVORITOS - ATELIÊ DA NICK
+================================= */
+
+/* ===== HEADER ===== */
+#favorites-header {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    background: #fff0f6;
+    color: var(--cor-primaria);
+}
+
+#favorites-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+#favorites-header p {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* ===== CONTAINER ===== */
+#favorites-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ===== ITEM FAVORITO ===== */
+.favorite-item {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-leve);
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.3s;
+}
+
+.favorite-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-media);
+}
+
+.favorite-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.favorite-item .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.favorite-item h3 {
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.favorite-item p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.favorite-item .price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--cor-primaria-escura);
+}
+
+/* ===== AÇÕES ===== */
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.actions button {
+    border: none;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.3s;
+}
+
+/* Adicionar ao carrinho */
+.actions .add-cart {
+    background: var(--cor-primaria);
+    color: #fff;
+}
+
+.actions .add-cart:hover {
+    background: var(--cor-primaria-escura);
+}
+
+/* Remover */
+.actions .remove {
+    background: #f5f5f5;
+    color: var(--cor-texto-secundario);
+}
+
+.actions .remove:hover {
+    background: #ffe0eb;
+    color: var(--cor-primaria);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .favorite-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .favorite-item img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .actions button {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,148 @@
+#refund {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ====== Informações do Pedido ====== */
+.order-info h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+}
+
+.order-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.order-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid var(--cor-primaria);
+}
+
+.order-card .details h3 {
+    color: var(--cor-texto-principal);
+    margin-bottom: 0.5rem;
+}
+
+.order-card .details p {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+    margin: 0.3rem 0;
+}
+
+/* ====== Formulário ====== */
+#refund-form {
+    margin-top: 2rem;
+    border-top: 2px solid var(--cor-destaque);
+    padding-top: 1.5rem;
+}
+
+#refund-form h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+}
+
+#refund-form label {
+    display: block;
+    font-weight: 600;
+    margin: 0.8rem 0 0.3rem;
+}
+
+#refund-form select,
+#refund-form textarea,
+#refund-form input[type="file"] {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--cor-texto-principal);
+}
+
+#refund-form select:focus,
+#refund-form textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 4px rgba(212, 85, 143, 0.3);
+}
+
+#refund-form button {
+    display: block;
+    margin-top: 1.5rem;
+    background: var(--cor-secundaria);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#refund-form button:hover {
+    background: var(--cor-primaria);
+    transform: scale(1.05);
+}
+
+#refund-form .note {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+    margin-top: 1rem;
+    background: #f9f9f9;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--cor-destaque);
+}
+
+/* ====== Mensagem de sucesso ====== */
+#success-message {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f1fff2;
+    border: 1px solid #a7e9aa;
+    padding: 2rem;
+    border-radius: 15px;
+    color: #256029;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+#success-message span {
+    font-weight: 400;
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+/* ====== Responsividade ====== */
+@media (max-width: 600px) {
+    .order-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .order-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #refund-form button {
+        width: 100%;
+    }
+}

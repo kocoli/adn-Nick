@@ -10,9 +10,11 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="<?= url("assets/admin/css/style.css") ?>">
-    <?php if ($this->section("specific-style")): ?>
-        <?= $this->section("specific-style"); ?>
-    <?php endif; ?>
+
+  <?php if ($this->section("specific-style")): ?>
+      <?= $this->section("specific-style"); ?>
+  <?php endif; ?>
+
 </head>
 <body>
     <!-- Sidebar -->

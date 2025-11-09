@@ -1,10 +1,10 @@
 /* ===== VARIÁVEIS GLOBAIS ===== */
 :root {
-  --cor-principal: #F7E3D3; /* Rosa vintage */
-  --cor-secundaria: #D68B8B; /* Champagne claro */
-  --cor-escura: #7A5550; /* Marrom rosado */
-  --cor-clara: #FFF9F5; /* Fundo */
-  --cor-hover: #E4A6A6; /* Rosa antigo */
+  --cor-principal: #f7d3dd; /* Rosa vintage */
+  --cor-secundaria: #d68bac; /* Champagne claro */
+  --cor-escura: #7a5063; /* Marrom rosado */
+  --cor-clara: #fff5fc; /* Fundo */
+  --cor-hover: #e4a6b4; /* Rosa antigo */
   --sombra: 0 2px 10px rgba(122,85,80,0.15);
   --transicao: 0.3s ease;
 }

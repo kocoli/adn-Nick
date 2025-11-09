@@ -1,0 +1,164 @@
+/* ==============================
+   PRODUTOS - ATELIÊ DA NICK
+================================= */
+
+/* ===== HEADER ===== */
+#products-header {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    background: #fff0f6;
+    color: var(--cor-primaria);
+}
+
+#products-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+#products-header p {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* ===== FILTROS ===== */
+#filters {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background: var(--cor-fundo-categorias);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.filter-group button {
+    background: #fff;
+    border: 1px solid var(--cor-borda);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    color: var(--cor-texto-principal);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-group button:hover {
+    background: var(--cor-destaque);
+    color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+.filter-group button.active {
+    background: var(--cor-primaria);
+    color: #fff;
+    border-color: var(--cor-primaria);
+}
+
+/* ===== PRODUTOS ===== */
+#products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--sombra-leve);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    color: var(--cor-primaria);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.product-info p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+}
+
+.product-info .price {
+    font-weight: bold;
+    color: var(--cor-primaria-escura);
+    margin-bottom: 0.8rem;
+}
+
+/* ===== BOTÕES ===== */
+.product-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+.product-actions button {
+    border: none;
+    background: var(--cor-destaque);
+    color: var(--cor-primaria);
+    font-size: 1.1rem;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.product-actions button:hover {
+    background: var(--cor-primaria);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    #filters {
+        padding: 1rem;
+    }
+
+    .filter-group {
+        gap: 0.5rem;
+    }
+
+    .product-card img {
+        height: 200px;
+    }
+}

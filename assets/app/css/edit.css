@@ -1,0 +1,160 @@
+#edit-profile {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#edit-profile h2 {
+    text-align: center;
+    color: var(--cor-primaria);
+    margin-bottom: 2rem;
+}
+
+/* =========== Form Sections =========== */
+.form-section {
+    margin-bottom: 2.5rem;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: #fafafa;
+}
+
+.form-section h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--cor-texto-principal);
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.7rem;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px rgba(214, 74, 146, 0.2);
+}
+
+/* =========== Buttons =========== */
+.btn-save {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: var(--cor-secundaria);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-save:hover {
+    background: var(--cor-primaria);
+    transform: scale(1.05);
+}
+
+/* =========== Plan Cards =========== */
+.plans {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.plan-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #fff;
+}
+
+.plan-card:hover {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 6px rgba(214, 74, 146, 0.2);
+}
+
+.plan-card input {
+    accent-color: var(--cor-primaria);
+}
+
+.plan-card .plan-info h4 {
+    margin-bottom: 0.3rem;
+    color: var(--cor-primaria);
+}
+
+/* =========== Danger Zone =========== */
+.danger-zone {
+    background: #fff5f5;
+    border: 1px solid #f8d7da;
+}
+
+.danger-zone h3 {
+    color: #b02a37;
+}
+
+.danger-zone p {
+    color: #721c24;
+    margin: 0.5rem 0 1rem;
+}
+
+.btn-delete {
+    background: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background: #b02a37;
+}
+
+/* =========== Responsividade =========== */
+@media (max-width: 700px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #edit-profile {
+        padding: 1.2rem;
+    }
+
+    .btn-save, .btn-delete {
+        width: 100%;
+    }
+}

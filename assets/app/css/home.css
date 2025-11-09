@@ -1,0 +1,330 @@
+/* ==================== SEÇÃO BANNER ==================== */
+#banner {
+    width: 100%;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: #fff;
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-content {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.banner-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.banner-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.banner-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.banner-text a {
+    text-decoration: none;
+}
+
+.btn-banner {
+    background: #fff;
+    color: var(--cor-primaria);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-banner:hover {
+    background: var(--cor-destaque);
+    color: #fff;
+}
+
+.banner-img img {
+    width: 450px;
+    border-radius: 20px;
+}
+
+/* ==================== PRODUTOS EM DESTAQUE ==================== */
+#top-products {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--cor-fundo-categorias);
+}
+
+#top-products h3 {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    box-shadow: var(--sombra-leve);
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-card h4 {
+    margin: 1rem 0 0.5rem;
+    color: var(--cor-texto-principal);
+}
+
+.product-card p {
+    color: var(--cor-primaria);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.product-card button {
+    border: none;
+    background: var(--cor-primaria);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.product-card button:hover {
+    background: var(--cor-primaria-escura);
+}
+
+/* ==================== AVALIAÇÕES ==================== */
+#avaliation {
+    padding: 3rem 2rem;
+    background: #fff;
+    text-align: center;
+}
+
+#avaliation h3 {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    margin-bottom: 2rem;
+}
+
+.avaliations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.avaliation-card {
+    background: var(--cor-fundo-categorias);
+    border-radius: 12px;
+    box-shadow: var(--sombra-leve);
+    padding: 1.5rem;
+    max-width: 350px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.avaliation-card:hover {
+    transform: translateY(-5px);
+}
+
+.avaliation-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: var(--cor-texto-secundario);
+}
+
+.client {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.client img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--cor-primaria);
+}
+
+.client span {
+    font-weight: 600;
+    color: var(--cor-texto-principal);
+}
+
+/* ==================== SEÇÃO SUPER PARCEIROS ======================= */
+
+#partners {
+    padding: 4rem 2rem;
+    background-color: #fff8f6;
+    text-align: center;
+}
+
+#partners h3 {
+    font-size: 1.8rem;
+    color: #b34a2d;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#partners .subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.partner-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.partner-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.8rem;
+    border: 3px solid #f2c2b1;
+    transition: transform 0.3s ease;
+}
+
+.partner-card h4 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.partner-card span {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.partner-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.partner-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ===============================
+   SEÇÃO PUBLICIDADE / HISTÓRIAS
+================================== */
+
+#publicity {
+    background: linear-gradient(135deg, #fdf0f5 0%, #ffe9f0 100%);
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top: 2px solid #f0c3d2;
+}
+
+.publicity-content {
+    max-width: 800px;
+}
+
+#publicity h3 {
+    font-size: 1.8rem;
+    color: #b03d6f;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+#publicity p {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.btn-article {
+    display: inline-block;
+    background: #d4558f;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.9rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(212, 85, 143, 0.2);
+}
+
+.btn-article:hover {
+    background: #b03d6f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(212, 85, 143, 0.3);
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+    .banner-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .banner-img img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .avaliation-form {
+        padding: 1.5rem 1rem;
+    }
+}
