@@ -26,12 +26,24 @@
               <label for="categoria">Categoria</label>
               <select id="categoria" name="categoria">
                 <option value="">Selecione</option>
-                <option value="fios">Fios e Lãs</option>
-                <option value="ferramentas">Ferramentas</option>
-                <option value="pecas">Peças Prontas</option>
-                <option value="outros">Outros</option>
+                <option value="fios">Fios e Linhas</option>
+                <option value="tecidos">Tecidos e Feltros</option>
+                <option value="ferramentas">Agulhas e Ferramentas</option>
+                <option value="costura">Acessórios para Costura</option>
+                <option value="decoracao">Artesanato e Decoração</option>
+                <option value="artesanato">Kits de Artesanato</option>
+                <option value="customisar">Materiais para Customização</option>
+                <option value="customisar">Materiais para Customização</option>
+                <option value="prontos">Peças Prontas</option>
               </select>
             </div>
+
+              <div class="campo">
+                <label for="subcategoria">Subcategoria</label>
+                <select id="subcategoria" name="subcategoria">
+                  <option value="">Selecione uma categoria primeiro</option>
+                </select>
+              </div>
 
             <div class="campo">
               <label for="codigo">Código / SKU</label>
