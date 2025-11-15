@@ -1,0 +1,214 @@
+/* ===== BANNER ===== */
+#banner {
+  background: linear-gradient(135deg, #fff9fb 0%, #ffeaf2 100%);
+  padding: 60px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--sombra-leve);
+}
+
+.banner-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+/* ===== BANNER (texto) ===== */
+.banner-text {
+  flex: 1 1 700px;
+  color: var(--cor-texto-principal);
+  animation: fadeInUp 1s ease-in-out;
+  backdrop-filter: blur(8px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.banner-text:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== TÍTULO ===== */
+.banner-text h2 {
+  font-size: 2.4rem;
+  color: var(--cor-primaria-escura);
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== PARÁGRAFOS ===== */
+.banner-text p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--cor-texto-secundario);
+  line-height: 1.6;
+}
+
+/* ===== LISTA ===== */
+.banner-text ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.banner-text ul li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 1rem;
+  color: var(--cor-texto-principal);
+  line-height: 1.5;
+}
+
+.banner-text ul li::before {
+  content: "🌸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.banner-text ul li:hover {
+  color: var(--cor-primaria);
+}
+
+.banner-text ul li:hover::before {
+  transform: scale(1.2);
+}
+
+.banner-img {
+  flex: 2 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.banner-img img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== CONTAINER DOS BOTÕES ===== */
+.banner-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+/* ===== ESTILO BASE DOS BOTÕES ===== */
+.banner-buttons a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 200px;
+  box-shadow: var(--sombra-leve);
+}
+
+/* ===== BOTÃO DO VENDEDOR ===== */
+.btn-vendedor {
+  background-color: var(--cor-primaria);
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.btn-vendedor:hover {
+  background-color: var(--cor-primaria-escura);
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-media);
+}
+
+/* ===== BOTÃO DO CLIENTE ===== */
+.btn-cliente {
+  background-color: transparent;
+  border: 2px solid var(--cor-primaria);
+  color: var(--cor-primaria-escura);
+}
+
+.btn-cliente:hover {
+  background-color: var(--cor-primaria-escura);
+  color: #fff;
+  border: none;
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-media);
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== ANIMAÇÃO SUAVE ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  #banner {
+    padding: 40px 5%;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-text ul li {
+    padding-left: 0;
+  }
+
+  .banner-text ul li::before {
+    display: none;
+  }
+
+  .banner-img img {
+    max-width: 90%;
+  }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 600px) {
+  .banner-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner-buttons a {
+    width: 100%;
+    max-width: 280px;
+  }
+}
